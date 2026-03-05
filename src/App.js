@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import BuildOrDie from './pages/BuildOrDie';
+import BuildOrDieAuth from './pages/BuildOrDieAuth';
+import BuildOrDieDashboard from './pages/BuildOrDieDashboard';
+import BuildOrDieWall from './pages/BuildOrDieWall';
+import BuildOrDieSprints from './pages/BuildOrDieSprints';
+import BuildOrDieArena from './pages/BuildOrDieArena';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BuildOrDie />} />
+        <Route path="/auth" element={<BuildOrDieAuth />} />
+        <Route path="/dashboard" element={<BuildOrDieDashboard />} />
+        <Route path="/wall" element={<BuildOrDieWall />} />
+        <Route path="/sprints" element={<BuildOrDieSprints />} />
+        <Route path="/arena" element={<BuildOrDieArena />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
