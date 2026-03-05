@@ -102,7 +102,7 @@ useEffect(() => {
         { role: "assistant", text: `Problem loaded: **${problem.title}**\n\nRead the brief carefully. Don't ask me to explain it — figure out what you don't understand first. Then come to me with a specific question about *your thinking*, not about *the answer*.` }
       ]);
     }
-  }, [problem?.title]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const send = async () => {
     if (!input.trim() || loading) return;
